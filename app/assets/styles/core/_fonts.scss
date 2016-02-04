@@ -1,0 +1,16 @@
+//== Typography Vars
+$font-url:          "../fonts";
+$font-example: "examplefont";
+
+// Example font-face
+@font-face {
+    font-family: '#{$font-example}';
+    src: url('#{$font-url}/#{$font-example}.eot');
+    src: url('#{$font-url}/#{$font-example}.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-url}/#{$font-example}.woff2') format('woff2'),
+         url('#{$font-url}/#{$font-example}.woff') format('woff'),
+         url('#{$font-url}/#{$font-example}.ttf') format('truetype'),
+         url('#{$font-url}/#{$font-example}.svg#example') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

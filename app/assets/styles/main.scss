@@ -1,0 +1,30 @@
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+// Core
+@import "variables";
+@import "core/fonts";
+@import "core/layout";
+
+// Mixins
+@import "helpers/mixins";
+
+// Helpers
+@import "helpers/helpers";
+
+// Components
+// @import "components/name";
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  // font-family: $font-thin;
+  background-color: $bg-color;
+  color: $brand-primary-color;
+}

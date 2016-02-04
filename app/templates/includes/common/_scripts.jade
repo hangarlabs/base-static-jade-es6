@@ -1,0 +1,27 @@
+//- scripts.jade
+script
+  include ../../../assets/scripts/analytics.js
+
+
+// build:js scripts/vendor.js
+// bower:js
+
+// endbower
+// endbuild
+
+
+// build:js scripts/plugins.js
+
+script(src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js")
+script(src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js")
+// endbuild
+
+
+// build:js scripts/main.js
+
+script(src="assets/scripts/main.js")
+// endbuild
+
+
+script
+  include ../../../assets/scripts/example.js

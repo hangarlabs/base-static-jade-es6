@@ -1,0 +1,54 @@
+@mixin gradient-radial($position: center, $start: #ffffff, $start-pos: 0%, $end: #000000, $end-pos: 100%) {
+  background: $start; /* Old browsers */
+  background: -moz-radial-gradient($position, ellipse cover, $start $start-pos, $end $end-pos); /* FF3.6+ */
+  background: -webkit-gradient(radial, $position, $start-pos, $position, $end-pos, color-stop($start-pos,$start), color-stop($end-pos,$end)); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient($position, ellipse cover, $start $start-pos,$end $end-pos); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient($position, ellipse cover, $start $start-pos,$end $end-pos); /* Opera 12+ */
+  background: -ms-radial-gradient($position, ellipse cover, $start $start-pos,$end $end-pos); /* IE10+ */
+  background: radial-gradient(ellipse at $position, $start $start-pos,$end $end-pos); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start', endColorstr='$end',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@mixin gradient-linear($position: top, $start: #ffffff, $start-pos: 0%, $end: #000000, $end-pos: 100%) {
+  background: $start; /* Old browsers */
+  background: -moz-linear-gradient($position, $start $start-pos, $end $end-pos); /* FF3.6+ */
+  background: -webkit-gradient(linear, $position, color-stop($start-pos,$start), color-stop($end-pos,$end)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient($position, $start $start-pos,$end $end-pos); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient($position, $start $start-pos,$end $end-pos); /* Opera 11.10+ */
+  background: -ms-linear-gradient($position, $start $start-pos,$end $end-pos); /* IE10+ */
+  @if $position == top center{
+    background: linear-gradient(to top, $start $start-pos,$end $end-pos); /* W3C */
+  }
+  @else if $position == bottom center{
+    background: linear-gradient(to bottom, $start $start-pos,$end $end-pos); /* W3C */
+  }
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$start}', endColorstr='#{$end}',GradientType=0 ); /* IE6 */
+}
+
+@mixin placeholder ($color) {
+  &::-webkit-input-placeholder {
+   color: $color;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+     color: $color;  
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+     color: $color;  
+  }
+
+  &:-ms-input-placeholder {  
+     color: $color;  
+  }
+}
+
+@mixin shadow ($posx, $posy, $blur, $color, $inset) {
+  $type: ;
+  @if($inset == true){
+    $type: inset;
+  }
+  -webkit-box-shadow: $type $posx $posy $blur $color; /* WebKit */
+  -moz-box-shadow: $type $posx $posy $blur $color; /* Firefox */
+  box-shadow: $type $posx $posy $blur $color; /* Standard */
+}
